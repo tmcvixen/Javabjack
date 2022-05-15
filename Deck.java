@@ -1,3 +1,4 @@
+
 import java.util.ArrayList;
 import java.util.Collections;
 
@@ -19,13 +20,7 @@ public class Deck {
         }
     }
 
-    public ArrayList<Card> getCards() {
-        return deck;
-    }
-    
-
-
-    public void shuffleDeck() {
+    public void shuffleDeck(){
         Collections.shuffle(deck);
     }
 
@@ -37,11 +32,11 @@ public class Deck {
         return cardListOutput;
     }
 
-    public Card getCard(int i) {
+    public Card getCard(int i){
         return this.deck.get(i);
     }
 
-    public void removeCard(int i) {
+    public void removeCard(int i){
         this.deck.remove(i);
     }
 

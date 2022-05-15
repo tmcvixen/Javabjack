@@ -1,3 +1,4 @@
+
 import java.util.Scanner;
 
 public class Blackjack {
@@ -18,13 +19,13 @@ public class Blackjack {
         // Set amount player is playing with
         int playerMoney = 200;
 
-        Scanner scan = new Scanner(System.in);
+        Scanner scanner = new Scanner(System.in);
 
         // Game loops while player still has money
         while(playerMoney > 0) {
             // Take the player's bet
             System.out.print("You have $" + playerMoney + ", how much would you like to bet? ");
-            int playerBet = scan.nextInt();
+            int playerBet = scanner.nextInt();
             // if statement that will not allow player to bet unless they are betting in increments of $5
             if (playerBet % 5 != 0) {
                 System.out.println("Sorry - you are only allowed to bet in $5 increments.");
@@ -65,7 +66,7 @@ public class Blackjack {
                 System.out.println("Dealer Hand: " + dealerHand.getCard(0).toString() + " and [Hidden]");
 
                 System.out.println("Do you want to Double Down?");
-                String answerdd = scan.next();
+                String answerdd = scanner.next();
                 boolean doubledown = false;
                 String hitOrStand = "";
 
@@ -74,7 +75,7 @@ public class Blackjack {
                     if (!answerdd.equals("yes")) {
                         // Ask player if they want to hit or stand
                         System.out.print("Would you like to hit or stand? ");
-                        hitOrStand = scan.next();
+                        hitOrStand = scanner.next();
 
                         // Player hits
                         if (hitOrStand.charAt(0) == 'h' || hitOrStand.charAt(0) == 'H') {
@@ -103,7 +104,7 @@ public class Blackjack {
                                     "to play your hand.");
                             // Ask player if they want to hit or stand
                             System.out.print("Would you like to hit or stand? ");
-                            hitOrStand = scan.next();
+                            hitOrStand = scanner.next();
 
                             // player can't double down but they still have the option to hit or stand
                             if (hitOrStand.charAt(0) == 'h' || hitOrStand.charAt(0) == 'H') {
@@ -141,7 +142,7 @@ public class Blackjack {
                         }
                     }
 
-                } while (!doubledown);
+                    } while (!doubledown);
 
                 break;
             }
@@ -193,6 +194,6 @@ public class Blackjack {
 
         }
 
-        System.out.println("Game Over... You are out of money.");
+        System.out.println("Game Over... You're out of money!");
     }
 }
